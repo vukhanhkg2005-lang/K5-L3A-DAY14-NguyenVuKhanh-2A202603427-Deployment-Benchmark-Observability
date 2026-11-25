@@ -94,6 +94,12 @@
 
 *(Đã kiểm tra unit test alert rules bằng `promtool test rules /p/alert_rules_test.yml` → `SUCCESS`.)*
 
+**Trả lời câu hỏi Exercise 7.4 (Observability stack):**
+1. **p95 vs avg trên Grafana:** Khi chạy tải có tail latency (`MOCK_SLOW_RATE=0.3`), `p95` lên tới `1.89 s` trong khi `avg` chỉ quanh `~0.6 s` (và ở cấu hình mặc định `MOCK_SLOW_RATE=0.03`, `avg ≈ 225–234 ms` trong khi `p99 = 1700 ms`). Khoảng cách lớn giữa `avg` và `p95/p99` chứng tỏ có **tail latency** nghiêm trọng mà chỉ số trung bình che giấu.
+2. **Panel "Requests/s theo instance":** Nginx chia đều traffic theo thuật toán **round-robin** giữa các instance agent đang healthy (khi gọi thử nhiều lần thấy header `X-Served-By` luân phiên đổi giữa các container).
+3. **Vì sao `input tokens/s` lớn hơn `output tokens/s`?** Vì agent v2 gửi kèm `SYSTEM_PROMPT` + tài liệu truy xuất từ `KNOWLEDGE_BASE` (RAG context) + câu hỏi của người dùng vào phần input (trung bình ~75–85 input tokens), trong khi câu trả lời ngắn gọn chỉ khoảng ~40–45 output tokens (gấp ~2 lần).
+4. **`curl http://localhost:8080/metrics` trả về gì và vì sao?** Trả về **`HTTP 404 Not Found`**. Trong `nginx/nginx.conf`, Nginx cố tình chặn route `/metrics` không cho truy cập từ bên ngoài để tránh lộ thông tin nội bộ hệ thống; chỉ Prometheus nằm cùng mạng nội bộ Docker (`obs_net`) mới scrape trực tiếp `agent:8000/metrics`.
+
 ### 4.2 Thí nghiệm "phá hệ thống"
 
 | # | Thay đổi | Alert nào firing | Thời gian từ lúc đổi → firing | Panel nào phản ánh rõ nhất |

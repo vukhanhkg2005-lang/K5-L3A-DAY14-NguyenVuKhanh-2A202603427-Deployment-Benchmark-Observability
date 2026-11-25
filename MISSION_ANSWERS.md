@@ -310,8 +310,6 @@ Một số chỉ số đo được khi chấm:
 - **Nội dung hỏi & nhận:**
   1. Kiểm tra môi trường Docker/WSL2, hướng dẫn cài đặt Docker Engine trong `Ubuntu-24.04`.
   2. Đọc đề bài (`README.md`, `CHECKPOINTS.md`, `RUBRIC.md`, `06-lab-complete/check_production_ready.py`) để hiểu rõ lộ trình K5 và 12 tiêu chí chấm.
-  3. Hỗ trợ triển khai các module `TODO` trong `06-lab-complete/` (`config.py`, `redis_client.py`, `auth.py`, `rate_limiter.py`, `cost_guard.py`, `main.py`, `Dockerfile`, `docker-compose.yml`, `.dockerignore`, `.env.example`, `railway.toml`, `render.yaml`) và chạy thực tế các ví dụ Part 1, 2, 4, 5 trong WSL2.
-- **Tự kiểm tra & xác nhận:**
-  - Chạy trực tiếp `python check_production_ready.py` (không sửa script chấm) trong WSL2 với Docker, đạt `PASS 12/12` (43/43 checks).
-  - Mọi số liệu (kích thước image `1.67GB` vs `240MB`, output `curl -i` 200/401/403/429, output `test_stateless.py` với 3 instance) đều được chạy thật trên máy, không ước lượng.
-  - Tự rà soát để hiểu từng file trong `06-lab-complete/app/` trước khi deploy lên Railway và trả lời Lab Coach.
+  3. Hỗ trợ triển khai các module `TODO` trong `06-lab-complete/` (`config.py`, `redis_client.py`, `auth.py`, `rate_limiter.py`, `cost_guard.py`, `main.py`, `Dockerfile`, `docker-compose.yml`, `.dockerignore`, `.env.example`, `railway.toml`, `render.yaml`).
+- **Tự kiểm tra & xác nhận:** Tự chạy `python check_production_ready.py` trong WSL2 với Docker đạt `PASS 12/12` (43/43 checks), tự deploy và kiểm thử 4 lệnh `curl` trên Railway (`200/200/401/200`), đối chiếu toàn bộ số liệu thật trong `MISSION_ANSWERS.md` và `BENCHMARK_REPORT.md`.
+
