@@ -1,9 +1,7 @@
 # Deployment Information
 
-> **Lưu ý:** Cập nhật lại URL public thực tế của bạn sau khi deploy `06-lab-complete/` lên Railway (CP6) và chụp 3 ảnh lưu vào `screenshots/`.
-
 ## Public URL
-`https://<your-railway-domain>.up.railway.app`
+https://k5-l3a-day14-nguyenvukhanh-2a202603427-deploymen-production.up.railway.app
 
 ## Platform
 Railway (deploy từ thư mục `06-lab-complete/` sử dụng `Dockerfile` và `railway.toml`, kết nối kèm dịch vụ Redis trên Railway)
@@ -12,7 +10,7 @@ Railway (deploy từ thư mục `06-lab-complete/` sử dụng `Dockerfile` và 
 
 Đặt biến môi trường trước khi chạy (không commit key thật vào repo):
 ```bash
-export BASE="https://<your-railway-domain>.up.railway.app"
+export BASE="https://k5-l3a-day14-nguyenvukhanh-2a202603427-deploymen-production.up.railway.app"
 export AGENT_API_KEY="<YOUR_AGENT_API_KEY>"
 ```
 

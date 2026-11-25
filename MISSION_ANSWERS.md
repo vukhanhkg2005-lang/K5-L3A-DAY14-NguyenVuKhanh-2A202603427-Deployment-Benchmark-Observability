@@ -115,12 +115,12 @@ Content-Type: application/json
 
 ## Part 3: Cloud Deployment
 
-### Exercise 3.1: Deploy agent Part 6 lên Railway *(Cập nhật sau khi bạn deploy trên Railway)*
-- **Public URL:** `[TODO: Dán URL Railway sau khi deploy 06-lab-complete/]`
+### Exercise 3.1: Deploy agent Part 6 lên Railway
+- **Public URL:** https://k5-l3a-day14-nguyenvukhanh-2a202603427-deploymen-production.up.railway.app
 - **Screenshots:**
-  - `screenshots/dashboard.png`
-  - `screenshots/running.png`
-  - `screenshots/test.png`
+  - [Deployment dashboard](screenshots/dashboard.png)
+  - [Service running](screenshots/running.png)
+  - [Test results](screenshots/test.png)
 
 ### So sánh `railway.toml` và `render.yaml`
 | Tiêu chí | `railway.toml` (Railway) | `render.yaml` (Render Blueprint) |
